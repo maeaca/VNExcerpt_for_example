@@ -1,0 +1,1025 @@
+label ozz_meeting_part_1:
+
+#show entry bar images
+#slow zoom to van
+#inside van
+
+san "I mean, I'm just saying, since I'm the one who secured the meeting, {i}I{/i} should be the one who goes with [mc]"
+
+if frank_dead:
+    bis "You already have one dead partner, are you trying to break a record or something and have two in two weeks?"
+    san "No..."
+    bis "You're the worst person to go. You're unqualified, inexperienced, emotional, and a short-sided idiot."
+    pie "Hey! Take it easy, [bis]"
+    bis "Oh, fuck off."
+    amb "Hmm, this group is more dysfunctional than I thought. Maybe I shouldn't have signed up for this little adventure."
+    menu:
+        "[bis], calm down":
+            if charisma == 5:
+                bis "..."
+                bis "I'll try"
+            else:
+                bis "I'm right, though!"
+        "Can't we just act like a team for 5 minutes":
+            $ lead -= 2
+            bis "I told you I wasn't a team type."
+            san "..."
+        "Can it. Now.":
+            $ addBisaff(-1)
+            $ lead += 2
+            bis "Fine."
+        "(Don't say anything)":
+            $ addSanaff(-1)
+            $ pas += 2
+            pass
+
+else:
+    bis "You're one of the worst to go with [them]. He's not a nobody, he's dangerous and we can't fuck it up. You just don't have the experience."
+    bis "The only one who's worse than that guy."
+    pie "You know my name is [pie]"
+    bis "Yeah, [pie], whatever."
+    pie "He's also kind of right."
+    pie "Also did you really not know my-"
+    san "I know, but it will just make more sense if I go. He might be mad if there is a new person to communicate with or something."
+
+san "Anyway if anyone comes up to [them], I'll just give them a little {i}bam{/i}, and a {b}{i}pow!{/b}{/i}. [ozz] won't know what hit 'em!"
+
+bis "Yes! Exactly this isn't a fight it's a-" #fed up
+
+oxx "Okay,, okay I love the enthusiasm, [san]"
+#san smile change
+oxx "Except, [ozz] knows exactly what you can hit him with AND he told [mc] to go alone."
+#san frown change
+
+san "Oh please. Whenever people tell someone to come alone, they don't {i}actually{/i} expect them to go alone."
+
+bis "Yeah, which is why we also need to expect that [ozz] won't come alone, either."
+
+if 'rol' in mc_party:
+    rol "Do you really think he brought someone with him?"
+    bis "Uh. Yeah. Obviously, [rol]. That's why I said it."
+    #rol deflates
+    if pas <= 30:
+        mc "[bis], come on."
+        bis "..."
+    amb "Can you go a minute without being an asshole? Or can you at least try? Because you are so annoying."
+    bis "..."
+    bis "Why did i agree to do this."
+    oxx "Because you're a softie deep down."
+    bis "..." #snarl
+    amb "You know if you don't respond we know, you know, we have a point."
+    bis "Lets just get this started."
+else:
+    san "Exactly. Let me circle back to the {i}bam{/i} and the-"
+    bis "Yeah, yeah. We get it, [san]"
+
+oxx "I would actually more bet that he is alone. He's only known for working solo, and I would be surprised he would change now."
+
+pie "But you can't trust villains."
+
+oxx "No, you can't. You're right"
+oxx "Do you have any experience against him, [amb]?"
+
+amb "No, I was retired by the time he showed up. Friends have, though. [moon] probably the most."
+amb "She has bitched to me about their fights before. He's slippery and avoids direct confrontation."
+amb "I love my girl but she is...not bright and he always loved messing with her."
+amb "Most important thing is, we can't nail down his powers and what activates it. The main one is his weirdo blood powers, that's obvious. But he has a second power."
+amb "I think the theory right now is when he makes eye contact, he can put you to sleep. So, be careful about that."
+
+if 'rol' in mc_party:
+    rol "I also heard that he makes people infuriated, like crazy mad."
+    amb "Yeah, [rol], he's just that annoying."
+    rol "...hm."
+
+pie "We don't know anything else about him?"
+
+oxx "No, he's never been caught. And he's never done anything severe enough for the Guild to focus on him. He's just an annoyance."
+
+pie "Didn't he like destroy a huge exhibit of the museum and took over Channel 5 temporarily."
+
+amb "Trust us, that's so minor. Especially since no one died. I don't even think seriously hurt."
+
+oxx "He is more into hijinks than anything."
+
+pie "Am I out of touch, I think that's a bit more than hijinks."
+
+if 'rol' in mc_party:
+    rol "At least he wants to meet at a known vigi bar. Neutral ground."
+    bis "That's the only reason why I don't think he's luring us into a trap"
+    san "Wonder if my [uncle] is here today"
+    rol "Your uncle is a vigilante?"
+    san "Yeah, he is, and this is his favorite bar. I probably know like half the people there."
+    rol "What? Won't they approach you, and maybe even [ozz]? That will make it difficult to have a neutral conversation."
+    san "Ah..."
+    bis "He's right. And the last thing we need is him to feel threatened and do something."
+    san "..."
+    san "Half is probably a stretch. Most of them are strangers."
+    bis "Come on, [san]..."
+if 'rol' not in mc_party:
+    san "At least he met at the vigi bar. Wonder if my [uncle] is here."
+    bis "Your uncle? Is he a vigi?"
+    san "Yeah, he is, and this is his favorite bar. I will probably know like half the people there."
+    bis "That's even more reason for you not to go. All eyes will be on you. The last thing we need is him to feel threatened and do something."
+    san "..."
+    san "Half is probably a stretch. Most of them are strangers."
+    bis "We can't scare him off before we get any info, [san]"
+
+
+pie "Well, moral of the story, even if [san] doesn't go, [mc] can't go alone its dangerous."
+
+bis "agreed"
+
+oxx "I think [they]'ll be fine."
+
+pie "What!?"
+
+if 'rol' in mc_party:
+    rol "What you are talking about? He may not be a big threat but he is a powerful villain. Even my parents couldn't catch him!"
+
+if mc_bg != 'hero': ##if sidekick added, add option here
+    oxx "[they] may not be a hero, but [they] aren't defenseless. And they have to be a real dumbass to go after [mc]. Going after [them] is getting [mcmom] attention, and no one wants that."
+else:
+    oxx "[mc] has the experience and skill. I'm not worried at all. And even then, we'll be here, 50 feet away."
+
+oxx "And I just don't think he is much of a threat. I don't think he came here to start trouble. He needs something from us."
+
+pie "I still don't think its a good idea"
+
+if 'rol' in mc_party:
+    rol "Any opinion here, [amb]"
+    amb "No, do whatever you want, [mc]."
+else:
+    amb "Just do whatever you want."
+
+label ozz_choice_party:
+menu:
+    "(Go Alone)":
+        $ coo -= 10
+        $ lead += 2
+        $ ozz_party.append('mc')
+        $ addSanaff(-2)
+        $ addPieaff(-1)
+        $ addBisaff(-1)
+        $ san_support -= 1
+        if 'rol' in mc_party:
+            $ addRolaff(-1)
+        $ addOxxaff(2)
+        san "*sigh* Damn. I get it but still, damn..."
+        oxx "I think that's for the best, [mc]."
+        pie "Be careful, [mc]. We'll be right out here for back up if you need it."
+    "(Take [oxx])":
+        oxx "I think you should go alone, follow [ozz]'s directions. But I will go if you want me to."
+        menu:
+            "Still take [oxx]":
+                $ coo += 5
+                $ lead += 2
+                $ addSanaff(-2)
+                $ san_support -= 1
+                $ addPieaff(1)
+                $ addBisaff(1)
+                $ ozz_party.append('oxx')
+                oxx "Sure, if you want to. But I'm going to let you take the lead."
+                san "Aww...dammit."
+            "Go Alone":
+                $ coo -= 5
+                $ addSanaff(-2)
+                $ addPieaff(-1)
+                $ addBisaff(-1)
+                $ san_support -= 1
+                if 'rol' in mc_party:
+                    $ addRolaff(-1)
+                $ addOxxaff(2)
+                $ ozz_party.append('mc')
+                oxx "I think that's for the best. You'll be fine in there."
+                pie "And we'll be right here for back up, if you need it."
+            "Actually I'll pick someone else.":
+                oxx "Okay."
+                jump ozz_choice_party
+    "Take [amb]":
+        $ coo += 5
+        $ addSanaff(-2)
+        $ san_support -= 1
+        amb "Sure. If that's what you want"
+        san "Aww...dammit."
+        $ ozz_party.append('amb')
+    "Take [rol]" if 'rol' in mc_party:
+        $ coo += 5
+        $ addSanaff(-2)
+        $ san_support -= 1
+        $ addRolaff(-2)
+        $ ozz_party.append('rol')
+        san "Aww...dammit."
+        rol "Me?! You sure?"
+        mc "Yeah"
+        rol "oh, uh, okay. I'll my best to help."
+    "Take [pie]":
+        $ coo += 5
+        $ san_support -= 1
+        $ addPieaff(-1)
+        $ ozz_party.append('pie')
+        pie "Okay. Not sure I will be much help though..."
+        san "No, you got this [pie]!"
+        pie "Uhhh...we'll see about that."
+        mc "Do you want me to choose someone else?"
+        pie "No, I can do it. I just don't know how I can help."
+        menu:
+            "You're a wildcard, he won't know how to deal with you.":
+                pie "Well that's true..."
+            "I just feel better if you're by my side.":
+                $ addPieaff(2)
+                pie "That's so embarrassing to say out loud" #blushy
+            "You're selling yourself short.":
+                mc "You are very observant and you don't back down when confronted."
+                san "yeah, [pie] you're great"
+                pie "Guys..." #blushy
+                $ addPieaff(2)
+    "Take [bis]":
+        $ coo += 5
+        $ addSanaff(-2)
+        $ san_support -= 1
+        $ ozz_party.append('bis')
+        bis "Why are you taking me? I won't be like any help if you get in a fight."
+        menu:
+            "Because you're a lot smarter than me." if intell != 5:
+                $ addBisaff(-1)
+                if intell < 3:
+                bis "So, is [oxx]"
+                mc "But he doesn't want to go."
+                bis "Fine."
+            "[ozz] won't be threatened by you, and you can back me up" if intell >= 4:
+                $ addBisaff(2)
+                mc "And so he might be more relaxed talking to us"
+                bis "Ha, what about {i}this{/i} isn't threatening?"
+                menu:
+                    "If [ozz] is threatened by YOU, then he's even more of a coward then we thought":
+                        #bis laugh
+                        $ humo += 1
+                    "Are you...supposed to be threatening?":
+                        bis "I don't think so. But some religious grandmas disagree."
+                    "You do look a bit intimidating.":
+                        bis "I'm flattered, but I think only religious grandmas are threatened by me."
+            "Its not like he's impervious to bullets.":
+                $ addBisaff(2)
+                bis "You got me there."
+            "Two heads are better than one.":
+                $ addBisaff(-1)
+                bis "I...guess. But you usually want to diversify your options."
+                bis "I'll go, just don't think this is the smartest choice."
+            "Because I think its best to take you." if argue >= 15:
+                $ addBisoff(-1)
+                $ lead += 1
+                $ pas -= 2
+                $ coo -= 1
+                bis "This is bullshit."
+    "Take [san]":
+        $ addSanaff(+5)
+        $ ozz_party.append('san')
+        $ san_support += 2
+        san "Really!? Like really, really?"
+        mc "Yes. Really"
+        san "Whoo Hoo! Hell yeah!"
+        #celebrate in van
+        if frank_dead:
+            $ addBisaff(-2)
+            bis "Hopefully you don't fuck this up..."
+            san "No, I'm more prepared for this. I won't make the same mistakes"
+            bis "Sure."
+        else:
+            bis "Damnnit! Don't yell so loud!"
+            oxx "Yes, [san] its a small space"
+            san "Sorry, sorry."
+
+if 'mc' in ozz_party:
+    mc "I will let you know if I need help."
+    oxx "We'll be here."
+    oxx "Give us an alert if you need us."
+else:
+    mc "everyone else just stay for back up."
+    if 'oxx' in ozz_party:
+        bis "We'll be keeping tabs here."
+        bis "Just do your mind power things to let us know if you need help."
+    else:
+        oxx "We'll be here."
+        oxx "Give us an alert if you need us."
+
+
+##show bar
+mc "A large group of people here during the day."
+mc "That must be [oxx] in the back"
+mc_th "Not inconspicuous at all..."
+call dice_roll
+if lvl2 + perce >= 3:
+    mc "A lot of cameras in here. Don't know if that's good or bad. I don't want The Guild to know I'm here."
+if lvl2 + perce >= 4 and 'san' not in ozz_party and 'mc' not in ozz_party:
+    mc "And everyone is looking at us. We obviously don't belong here."
+elif lvl2 + perce >= 4 and 'mc' in ozz_party:
+    mc "And everyone is looking at me. I obviously don't belong here."
+elif perce >= 4:
+    mc "And everyone is looking over here."
+    if 'san' in ozz_party:
+        mc_th "[san] how many people do you recognize here."
+        san_th "Uhhh...a lot."
+        mc_th "Well that explains the stares."
+        san_th "Including [uncle]..."
+        #zoom in on ramon
+        mc "of course..."
+else:
+    pass
+
+if lvl4 + perce >= 6 and 'mc' in ozz_party:
+    mc_th "Oh, I see now. They are just looking because I don't belong, just keeping tabs."
+elif lvl4 + perce >= 6:
+    mc_th "They're probably only staring because we don't belong and they don't want us to start anything."
+else:
+    pass
+
+if sense:
+    mc_th "Its almost overwhelming, the sounds and the smell. Its making me a bit sick."
+    if 'pie' in ozz_party:
+        pie "You okay, you look a bit pale?"
+        mc "I'm fine."
+
+##################################################################################
+#
+#
+#VIGI IMAGE MAP JUMP POINT HERE
+#
+#
+##################################################################################
+
+label ch1_bar_optional_choices:
+
+call screen ch1_vigi_bar
+
+label ch1_vigi_bar_go_to_bar:
+
+if bis in ozz_party:
+    jump ch1_vigi_bar_bar_bis
+
+##################################################################################
+#
+#
+#NORMAL BARTENDER SCENE HERE
+#
+#
+##################################################################################
+
+$ car += 1
+
+if 'san' in ozz_party:
+    san "Great idea, I could use a drink to calm my nerves."
+if 'amb' in ozz_party:
+    amb "A drink sounds great right now."
+if 'rol' in ozz_party:
+    rol "Should we really get a drink right now? Shouldn't we keep our sense sharp?"
+    rol "That's why my parents don't drink, just in case they need to leave on an emergency."
+    menu:
+        "Well I want a drink":
+            $ pas -= 1
+            $ argue += 1
+            $ addRolaff(-2)
+        "We have to get some info first, best to ask the bartender":
+            $ car -= 2
+            $ addRolaff(1)
+            rol "That's a good point."
+        "You don't have to come with me.":
+            $ addRolaff(-1)
+            rol "No, I'll come..."
+
+#approach
+if awk:
+    mc "Hello, sir. May I buy a drink?"
+    bartender "'Sir?' Didn't know I looked like a 'sir'"
+    if 'pie' in ozz_party:
+        pie "[theyre] formal"
+        bartender "Hmm. What can I do for you?"
+
+else:
+    mc "Hello."
+    bartender "Hello, haven't seen you around."
+    mc "Haven't been around before"
+
+
+
+menu:
+    "What do you recommend?":
+        pass
+    "Could I have a beer?":
+        pass
+    "Can I have a cocktail?":
+        pass
+    "Do you have anything non-alcoholic?":
+        pass
+    "Actually wanted to know if you could answer any questions?":
+        bartender "Maybe, maybe not. Go ahead and shoot."
+        jump ch1_bartender_ask
+
+bartender "Sorry, stranger. This is a member's only bar. We don't mind you walking around and talking, but drinks are restricted."
+bartender "Now, you don't happen to be a member, or are you?"
+
+if 'san' in ozz_party:
+    san "My uncle is! He's right over there."
+    bartender "Great, then he can order for you."
+    san "Yeah but-"
+    bartender "Rules are rules."
+    san "Damn..." #slump
+    san_th "There's no way [uncle] will let me get a drink."
+    if not ch1_uncle_convince:
+        san_th "Even if we were on good terms."
+
+if 'oxx' in ozz_party:
+    oxx "I expected that."
+
+if subtle:
+    bartender_th "Gotta keep an eye on them..."
+
+menu:
+    "Come on? I'll pay extra.":
+        bartender "Oh you can still pay. I just won't serve you."
+    "Can't even serve me a drink?":
+        bartender "No."
+    "Come on! this is bullshit" if pas <= 20:
+        $ argue += 1
+        bartender "You can leave, if you want."
+    "Can you at least answer some questions?":
+        bartender "Maybe, maybe not. Worth a try to ask."
+    "Oh sorry, I'll just leave..." if cowar >= 3:
+        $ cowar += 1
+        jump ch1_bar_optional_choices
+    "Leave the bar":
+        mc "Okay, sorry to disturb you."
+        $ ch1_bar_optional = False
+        jump ch1_bar_optional_choices
+
+
+
+
+label ch1_bartender_ask:
+$ ch1_bartender_ask_1 = False
+$ ch1_bartender_ask_2 = False
+$ ch1_bartender_ask_3 = False
+bartender "What'cha got for me?"
+menu:
+    "Anyone unusual walk in here?" if ch1_bartender_ask_1 == False:
+        bartender "Ha! Everyone here is unusual. Vigis are weird folks."
+        if 'amb' in ozz_party or 'oxx' in ozz_party:
+            bartender "If you mean someone who doesn't belong, you two are the only ones who really stick out."
+            bartender "Most vigis are a little low on funds, a little worse for wear and shady. And you obviously aren't."
+            if 'oxx' in ozz_party:
+                oxx "I'm just really good at saving..."
+            if spoiled:
+                mc "My family isn't rich, just comfortable."
+            if 'amb' in ozz_party:
+                bartender "Also, you look a bit familiar..."
+                amb "I just have one of those faces. Standard rich girl with a nose job look. We all look about the same."
+                bartender "Right..."
+                if subtle:
+                    bartender_th "No, I've seen her someplace..."
+        else:
+            bartender "If you mean someone who doesn't belong, you're the only one who really sticks out."
+            bartender "Most vigis are a little low on funds, and you obviously aren't."
+        bartender "So sorry, can't help with that."
+        $ ch1_bartender_ask_1 = True
+        jump ch1_bartender_ask
+    "How hard is it to get a membership?" if ch1_bartender_ask_2 == False:
+        bartender "Pretty hard. You have to prove yourself and get the sponsorship of 5 other members."
+        bartender "And nobody here likes to just give their signature. They are all a bit grumpy and a stingy with those sponsorships."
+        if 'san' in ozz_party:
+            san "My Uncle is the grumpiest. He has never giving a signature and he never will."
+            bartender "Whose your uncle?"
+            san "Ramon, sitting over there."
+            bartender "Ramon!? Oh yeah, he was grandfathered in when this place started. He is a tough one."
+            san "You're telling me."
+        menu:
+            "May I join?" if mc_bg != 'hero':
+                bartender "You can, but its hard."
+            "Wish I could join" if mc_bg == 'hero':
+                $ pro_vigi += 1
+            "(leave it be)":
+                pass
+        $ ch1_bartender_ask_2 = True
+        jump ch1_bartender_ask
+    "Am I welcome here?"  if ch1_bartender_ask_3 == False:
+        bartender "Everyone is welcome here, just not everyone gets our services."
+        mc "Services?"
+        bartender "Of course, we offer 'assistance' for our members."
+        mc "Like what?"
+        bartender "Become a member and you'll find out."
+        $ ch1_bartender_ask_3 = True
+        jump ch1_bartender_ask
+    "Nothing else.":
+        bartender "Enjoy your time then."
+        $ ch1_bar_optional = False
+        jump ch1_bar_optional_choices
+
+
+##################################################################################
+#
+#
+#BIS CUSTOM BARTENDER SCENE HERE
+#
+#
+##################################################################################
+
+
+
+label ch1_vigi_bar_bar_bis:
+bis "Can we get something to drink?"
+
+bartender "This is a members only."
+
+bis "I am a member"
+#show badge
+
+bartender "Oh sorry, you're not a familiar face."
+
+bis "That's cause I'm not here often."
+
+bartender "What can I get ya?"
+
+label ch1_bar_bis_question_round_1
+$ ch1_bar_bis_question_round_1_1 = False
+menu:
+    "You're a member?" if ch1_bar_bis_question_round_1_1 == False :
+        bis "yeah. I got it when I was younger. Thought it was good to have a support system and what not"
+        bis "But I'm too anti-social for that."
+        jump ch1_bar_bis_question_round_1
+    "Could I have a beer?":
+        bartender "Sure thing."
+    "Can I have a cocktail?":
+        bartender "Sure thing."
+    "Do you have anything non-alcoholic?":
+        bartender "I mostly just have soda and water back here."
+        menu:
+            "Water is fine.":
+                bartender "Coming up."
+            "I'll take some pop":
+                bartender "Coming up."
+
+mc "So you don't come here often?"
+
+bis "I came maybe a couple of times. But, well, that was when I was with my family."
+
+mc "Your cousin right?"
+
+bis "Yeah..."
+##do truth thing here
+
+if dec_truth:
+    mc_th "He isn't telling the truth...who was he with?"
+if subtle:
+    bis_th "Well...and..."
+if subtle or dec_truth:
+    menu:
+        "(Push it)":
+            mc "Was it just your cousin? Or was it someone else?"
+            $ addBisaff(-5)
+            bis "Don't do your mind tricks on me."
+            if alien:
+                mc "Ah, right. Sorry"
+        "(leave it be)":
+            pass
+
+
+bartender "Here's your drinks. Anything else I can get for you?"
+
+mc "Do you have food here too?"
+
+bartender "Haha, pretty crappy food. Not sure I would recommend."
+
+bis "He's referring to the bar's 'services'. Vigis have access to weapons, info, fake ids, a lot of things."
+
+mc "Oh, I didn't know."
+
+label ch1_bar_bis_question_round_2:
+
+$ ch1_bar_bis_question_round_2_1 = False
+$ ch1_bar_bis_question_round_2_2 = False
+$ ch1_bar_bis_question_round_2_3 = False
+menu:
+    "Can we get some info?" if ch1_bar_bis_question_round_2_1 == False:
+        $ addBisaff(1)
+        bartender "Sure, about what?"
+        mc "Well-"
+        bartender "Info is for members only. Only he can ask. Information is powerful in this field, you know. More powerful than most things."
+        bis "Can we get a record of any vigis that have not checked in?"
+        bartender "That's...some sensitive data."
+        if charisma >= 4: 
+            mc "We are investigating possible linked deaths. We have a list of heroes, but not vigis."
+            bartender "Hmm...that is concerning."
+            bartender "I'll ask around."
+            $ ch1_evi_4 = True
+        else:
+            mc "We are investigating possible linked deaths. We have a list of heroes, but not vigis."
+            bartender "I can't just give that kind of information out."
+            bis "If you can provide anything, or at least spread the word."
+            bartender "We'll see"
+    "Do you know anything about that guy back there?" if ch1_bar_bis_question_round_2_2 == False:
+        bartender "No, he wondered in, asked for a drink, I said no, and he went off to pout like a child back there."
+        bartender "Guessing he's with you."
+        bis "Kind of."
+    "Can we get some fake ids?" if not frank_dead and if ch1_bar_bis_question_round_2_3 == False:
+        $ addBisaff(5)
+        bartender "For who?"
+        mc "A friend of a friend."
+        bis "I can send you the details."
+        bartender "Sure thing."
+        if subtle:
+            bis_th "That...was nice."
+    "There's nothing I can think of right now.":
+        bartender "Well as long as you're with him. You can ask anytime."
+        bis "I never thought about it, but I should use this resource more."
+
+bis "We should get going now"
+
+bartender "Let me know if you need anything else."
+
+$ ch1_bar_optional = False
+jump ch1_bar_optional_choices
+
+
+##################################################################################
+#
+#
+#CONFRONT UNCLE SCENES HERE
+#
+#
+##################################################################################
+
+
+
+
+label ch1_vigi_bar_ramon:
+
+$ ch1_talk_to_ramon = True
+
+if 'san' in ozz_party:
+    jump ch1_vigi_san_ramon_confront_opening_1
+
+if 'mc' in ozz_party:
+    uncle "Hello [mc]"
+else:
+    uncle "Hello [mc], [ozz_party]"
+
+mc "Hi [uncle]"
+
+if 'pie' in ozz_party:
+    pie "Hi, [uncle]!"
+
+if 'amb' in ozz_party:
+    amb "Whose this?"
+    mc "[san]'s uncle. We all call him, [uncle]."
+    amb "Nice to meet you. I'm assuming you know who I am."
+    uncle "I do. Nice to meet you, [amb]"
+if 'rol' in ozz_party:
+    rol "Is this [san]'s uncle?"
+    uncle "You know my niece?"
+    rol "Ah, well, we only just met. My name is [rol]. I'm [legendaries]'s youngest son."
+    uncle "Bit out of place for you to be here, aren't you?"
+    rol "...yes" #small text maybe
+    uncle "Nice to meet you."
+
+uncle "Now, what are you doing here?"
+
+menu:
+    "I'm up to no good, obviously.":
+        $ humo += 1
+        uncle "Obviously." #QUICK smirk
+        uncle "None of my business if you don't want to say."
+    "Here to meet someone.":
+        $ tru += 2
+        uncle "Do you know this someone?"
+        menu:
+            "No.":
+                uncle "Then be careful."
+                mc "I will be"
+            "Yes.":
+                uncle "Hmmm."
+            "Kinda.":
+                uncle "That means no."
+    "Just to hang out.":
+        $ tru -= 2
+        uncle "At a vigi bar?"
+        mc "..."
+        uncle "Come on, you can lie better than that, I know it."
+    "That's private":
+        $ ope -= 2
+        $ addPieaff(2)
+        uncle "Its true. I won't push."
+
+uncle "Did you come up to talk to me in particular?"
+
+menu:
+    "No, just wanted to check in.":
+        uncle "Well consider things checked."
+        uncle "You can proceed with ignoring me while you do whatever you came here to do."
+    "Wanted some advice.":
+        uncle "About what?"
+        mc "How would you go about interviewing a villain?":
+        uncle "I wouldn't."
+        mc "right..."
+    "Just killing time.":
+        uncle "Kill time on your phone. I'm trying to finish my drink."
+
+if ch1_tell_sandra_talk_to_uncle == True:
+    uncle "By the way...did you talk to [san]?"
+    mc "I did, did she talk to you yet?"
+    uncle "No.."
+    mc "I'll make sure she contacts you."
+    uncle "Can you at least tell me if she's safe?"
+    mc "She is."
+    uncle "Good. That's all I need to know at the moment."
+else:
+    uncle "By the way, have you talked to [san]?"
+    uncle "She still hasn't contacted me."
+    mc "I have. we're talking again. She's safe."
+    uncle "Thank you. Please tell her to get in contact with me ASAP."
+    mc "I will."
+
+
+uncle "Good luck with whatever you're doing."
+
+if 'pie' in ozz_party:
+    uncle "And next time, don't drag [pie] into it."
+    pie "Yes, please leave me out of it next time..."
+
+mc "Thanks, [uncle]"
+
+jump ch1_bar_optional_choices
+
+
+label ch1_vigi_san_ramon_confront_opening_1:
+san "Oh please no, not right now."
+mc "We can't avoid him."
+san "Are you sure?"
+mc "Yes."
+uncle "Thought you would avoid me the entire time."
+san "What? I would never avoid you..."
+uncle "Oh, really? Because you've been avoiding me for weeks. What's one more day?"
+if ch1_tell_sandra_talk_to_uncle == True:
+    mc "I thought I told you to talk to him."
+    san "I forgot!"
+    if subtle:
+        san_th "I was worried how he would react."
+    uncle "What's going on, [san]?"
+san "No, I've been meaning to tell you..."
+menu:
+    "[san], this will take too long, I will go on without you":
+        $ addSanaff(-5)
+        $ san_support -= 1
+        san "..."
+        #looks back and forth
+        san "I get it."
+        san "[uncle], let's talk."
+        uncle "Great, I think a private conversation would be best."
+        $ ozz_party.remove('san')
+        $ ozz_party.append('mc')
+        jump ch1_bar_optional_choices
+    "(Stay and support [san])":
+        $ addSanaff(5)
+        $ san_support += 1
+        san "Thanks, [mc]"
+        jump ch1_deal_with_uncle
+
+
+###if go to ozz meeting and ch1_talk_to_ramon == False
+label ch1_vigi_san_ramon_confront_opening_2:
+
+uncle "[san]!"
+#uncle steps in front
+uncle "What are you doing? Going to just walk past me?"
+san "Uhhh...why are YOU here? its the middle of the day!"
+uncle "I just got done working, this is my evening. But don't redirect."
+san "Damn, I thought I could sneak by..."
+    if ch1_tell_sandra_talk_to_uncle == True:
+        mc "I thought I told you to let him know."
+        san "I forgot!"
+        if subtle:
+            san_th "I was worried how he would react."
+        uncle "What's going on, [san]? Spill it."
+menu:
+    "[san], this will take too long, I will go on without you":
+        $ addSanaff(-5)
+        $ san_support -= 1
+        san "..."
+        #looks back and forth
+        san "I get it."
+        san "[uncle], let's talk."
+        uncle "yes, I think a private conversation would be best."
+        $ ozz_party.remove('san')
+        $ ozz_party.append('mc')
+        jump ch1_bar_optional_choices
+    "(Stay and support [san])":
+        $ addSanaff(5)
+        $ san_support += 1
+        san "Thanks, [mc]"
+        jump ch1_deal_with_uncle
+
+
+
+label ch1_deal_with_uncle:
+
+uncle "Its time you tell me what's been going on."
+
+san "*sigh* okay."
+
+san "..."
+
+uncle "..."
+
+menu:
+    "Just spit it out, [san]":
+        $ car -= 2
+        $ pas -= 2
+        $ addSanaff(-2)
+        san "I'm trying!"
+    "Take your time":
+        $ coo += 2
+        $ addSanaff(2)
+    "...":
+        $ san_support += 1
+        $ addSanaff(1)
+
+san "Do you remember my friend, [frank]?"
+
+uncle "Yeah."
+
+if frank_dead:
+    san "You probably heard but...he got killed last week"
+    uncle "I heard through the grapevine, my condolences"
+    san "And-" #kinda sad
+    san "And its all my fault." #really sad
+else:
+    san "Well he almost got killed last week, and its all my fault."
+
+uncle "What happened, [san]?" #soften expression
+
+san "We were investigating the attacks on heroes lately, like [mc], like [frank]'s friend..."
+san "We THOUGHT we were being careful..."
+
+uncle "But you weren't."
+
+san "We weren't..."
+san "We got caught and I had to run to [mc] for help."
+san "[they] helped, along with [pie], [bis], and [oxx]"
+
+if frank_dead:
+    san "But it didn't matter..."
+if not frank_dead and not laptop_found:
+    san "We were able to save him, but not the data that, we think, the perpetrators were after."
+    uncle "What was on it?"
+    san "No idea, [frank] was decrypting it"
+else:
+    san "We were barely able to save him. Because I was so focused on getting the laptop, we think, the perpetrators wanted."
+    san "But we don't even know what's on it right now. He almost died because I wasn't focusing on the important thing, him."
+
+uncle "Were you hurt?"
+
+san "No. I wasn't."
+
+uncle "That's a relief."
+
+if frank_dead:
+    san "But [frank] was..."
+    uncle "I understand, but I'm glad you are okay."
+
+uncle "How were you caught?"
+
+san "Don't know. But we have theories. A lot of them. Could have been anything, really."
+
+menu:
+    "Because she made so many mistakes":
+        $ car -= 1
+        $ pas -= 2
+        $ addSanaff(-2)
+        $ san_support -= 1
+        san "[theyre] right..."
+    "We're trying to get more details":
+        san "Yeah..."
+    "Don't be too hard on yourself.":
+        san "I'm trying not to"
+        $ addSanaff(2)
+        $ san_baby += 1
+    "(stay silent)":
+        pass
+
+uncle "Hmmm..."
+
+san "But we, [frank] and I, were contacted by that man back there before it all went down"
+
+#slight zoom to oz
+
+uncle "You think he's involved."
+
+san "No, no, no. We don't. Honestly, he's kind of the reason we knew things were closing in."
+
+uncle "So, you go through all this trouble and you STILL want to get involved?."
+uncle "You are going to get yourself killed, right?"
+
+san "No I-"
+
+uncle "You always just dive right in and-and-what am I going to do if something happens to you, [san]?"
+
+san "..."
+
+label ch1_questions_ramon:
+$ ch1_questions_ramon_quiet = False
+menu: 
+    "She only got involved because of me, so you can blame me.":
+        $ pas += 2
+        $ lead += 1
+        $ ch1_st_my_fault = True
+        $ addSanaff(5)
+        uncle "I can't blame her for helping you. She would do anything for you and [pie]"
+        uncle "But I can blame her for going about it stupidly"
+    "She was only doing what she thought was right.":
+        $ addSanaff(5)
+        $ pas += 2
+        uncle "And that's what gets people killed. I see it all the time. Obituaries every month."
+        uncle "A lot of good people lost."
+    "Let's calm down, we're making a scene." if ch1_questions_ramon_quiet == False:
+        $ cal += 2
+        $ lead += 2
+        $ stra += 2
+        uncle "..."
+        uncle "You're right. I'll calm down. I don't want people staring either."
+        $ ch1_questions_ramon_quiet = True
+    "Maybe if you believed in her, she wouldn't have done something so dangerous." if san_support += 5 or ch1_san_vent == True:
+        $ argue += 1
+        $ agr -= 2
+        $ pas -= 2
+        uncle "Excuse me!"
+        mc "Everyone just tells her 'don't do this' and 'you can't do this'. No one's given her a shot."
+        mc "Not you, not The Guild."
+        mc "This is her making her mark"
+        $ ch1_uncle_convince = True
+        $ addSanaff(10)
+    "(let [san] handle it)":
+        $ san_baby -= 1
+        $ addSanaff(1)
+        san "If something happens, then I will deal with it. I-I can't just not try!"
+        san "I can do this if someone lets me!"
+        san "I'm not perfect, but I'm trying to learn and make things better."
+        uncle "And mistakes mean death."
+        if pro_san_confident_boost:
+            san "Sometimes. But I have a whole group behind me. I realized how stupid I was being. I straightened up."
+            $ ch1_uncle_convince = True
+        else:
+            san "I know...and I'm ready for that."
+            uncle "Well I'm not!"
+            san "You-you just gotta let me do this!"
+
+if ch1_uncle_convince:
+    $ san_uncle_relationship = 'better'
+    uncle "*sigh*"
+    uncle "We will talk more about this later."
+    uncle "Just promise me, you'll be careful."
+    uncle "And promise me you will actually visit and inform me what's going on."
+    san "I promise!"
+    uncle "I'm going to try to take a step back. I'm not used to this. So, please bear with me."
+    uncle "Take care of her, [mc]"
+    mc "I will."
+    uncle "I'll stay here in case something happens."
+    uncle "And I have to finish my beer."
+    uncle "But go do your thing."
+    san "Love ya, [uncle]"
+    uncle "Yeah yeah, love you too."
+    jump ch1_bar_optional_choices
+else:
+    uncle "Look, you-"
+    san "[uncle], I can't talk about this anymore. You have to just trust I can do this."
+    uncle "I don't though."
+    san "..." #heartbroken
+    $ san_uncle_relationship = 'bad'
+    san "Well I will have to prove it to you. Don't stop me, [uncle]" #leaves
+    uncle "[san]!"
+    menu:
+        "Sorry, [uncle]":
+            $ pas += 2
+        "Just trust her.":
+            $ addSanaff(2)
+        "We have to go":
+            $ pas -= 2
+    jump ch1_bar_vigi_ozz_meeting
+
+
+label ch1_bar_vigi_ozz_meeting:
+
+if 'san' in ozz_party and not ch1_talk_to_ramon:
+    jump ch1_vigi_san_ramon_confront_opening_2
+
+if 'san' in ozz_party and ch1_talk_to_ramon:
+    jump ch1_ozz_meeting_san
+
+if 'amb' in ozz_party:
+    jump ch1_ozz_meeting_amb
+
+if 'rol' in ozz_party:
+    jump ch1_ozz_meeting_rol
+
+if 'pie' in ozz_party:
+    jump ch1_ozz_meeting_pie
+
+if 'oxx' in ozz_party or 'mc' in ozz_party:
+    #oxx is roughtly the same as alone because he takes a step back
+    jump ch1_ozz_meeting_oxx_and_alone
